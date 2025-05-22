@@ -1,10 +1,11 @@
 import "./App.css";
-import Pointer from "./components/Pointer.jsx";
+import Form from "./components/Form";
 
 function App() {
   return (
     <>
-      <Pointer />
+      {/* <Pointer /> */}
+      <Form />
     </>
   );
 }

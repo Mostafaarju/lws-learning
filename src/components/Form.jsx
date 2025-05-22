@@ -1,65 +1,45 @@
 import { useState } from "react";
 
-function submitForm(answer) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (answer.toLowerCase() === "dhaka") {
-        resolve();
-      } else {
-        reject(new Error("Good guess but a wrong answer. Try Again!"));
-      }
-    }, 3000);
-  });
-}
-
 export default function Form() {
-  // visual states: empty, typing, submitting, success, error
+  const [inputs, setInputs] = useState([
+    {
+      id: 1,
+      label: "input",
+    },
+  ]);
 
-  //   Mandatory Data State
-  const [answer, setAnswer] = useState("");
-  const [error, setError] = useState(null);
-
-  //   visual State theke paoa final state
-  const [status, setStatus] = useState("typing");
-
-  if (status === "success") return <h1>Thats right!</h1>;
-
-  //   handlars
-  const handleTextChange = (e) => {
-    setError(null);
-    setAnswer(e.target.value);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("submitting");
-
-    try {
-      await submitForm(answer);
-      setStatus("success");
-    } catch (error) {
-      setStatus("typing");
-      setError(error.message);
-    }
+  const handleAddInput = () => {
+    const nextId = inputs[inputs.length - 1].id + 1;
+    setInputs([
+      ...inputs,
+      {
+        id: nextId,
+        label: "input",
+      },
+    ]);
   };
 
   return (
-    <>
-      <h2>City quiz</h2>
-      <p>What city is located on two continents?</p>
-      <form onSubmit={handleSubmit}>
-        <textarea
-          value={answer}
-          onChange={handleTextChange}
-          disabled={status === "submitting"}
-        ></textarea>
-        <br />
-        <button disabled={answer === "" || status === "submitting"}>
-          Submit
-        </button>
-        {status === "submitting" && <p>Loading...</p>}
-        {error && <p className="Error">{error}</p>}
-      </form>
-    </>
+    <div
+      style={{
+        marginBottom: "5px",
+      }}
+    >
+      {inputs.map((input) => (
+        <div key={input.id}>
+          <input
+            type="text"
+            label={input.label}
+            style={{
+              marginBottom: "5px",
+            }}
+          />
+        </div>
+      ))}
+
+      <div style={{ marginTop: "20px" }}>
+        <button onClick={handleAddInput}>Add Input</button>
+      </div>
+    </div>
   );
 }
