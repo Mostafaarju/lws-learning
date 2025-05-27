@@ -1,13 +1,5 @@
-import "./App.css";
-import Form from "./components/Form";
+import TravelPlan from "./components/TravelPlan";
 
-function App() {
-  return (
-    <>
-      {/* <Pointer /> */}
-      <Form />
-    </>
-  );
+export default function App() {
+  return <TravelPlan />;
 }
-
-export default App;
