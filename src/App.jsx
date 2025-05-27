@@ -1,11 +1,11 @@
 import "./App.css";
-import Form from "./components/Form";
+import AddTask from "./components/AddTask";
 
 function App() {
   return (
     <>
-      {/* <Pointer /> */}
-      <Form />
+      <h2>Todo App</h2>
+      <AddTask />
     </>
   );
 }
