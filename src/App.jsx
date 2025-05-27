@@ -45,7 +45,11 @@ function App() {
     <>
       <h2>Todo App</h2>
       <AddTask onAdd={handleAddTask} />
-      <TaskList tasks={tasks} />
+      <TaskList 
+      tasks={tasks} 
+      onChangeTask={handleChangeTask} 
+      onDeleteTask={handleDeleteTask}
+      />
     </>
   );
 }
