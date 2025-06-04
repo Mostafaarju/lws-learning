@@ -1,51 +1,23 @@
-* {
-  box-sizing: border-box;
+
+@import "tailwindcss";
+
+.dark{
+  @apply bg-[#171923] text-white
 }
 
-body {
-  font-family: sans-serif;
-  margin: 20px;
-  padding: 0;
-}
+/* ঐচ্ছিকভাবে স্ক্রলবার/কাস্টম স্টাইল যোগ করতে পারো */
 
-h1 {
-  margin-top: 0;
-  font-size: 22px;
-}
 
-h2 {
-  margin-top: 0;
-  font-size: 20px;
-}
+/* @theme {
+  /* Dark mode */
+  /* --dark-mode: "class"; */
 
-h3 {
-  margin-top: 0;
-  font-size: 18px;
-}
+  /* Container settings */
+  /* --container-center: true; */
+  /* --container-padding: 1.25rem; */
 
-h4 {
-  margin-top: 0;
-  font-size: 16px;
-}
+  /* Colors */
+  /* --colors-primary: #00d991; */
+/* } */ */
 
-h5 {
-  margin-top: 0;
-  font-size: 14px;
-}
-
-h6 {
-  margin-top: 0;
-  font-size: 12px;
-}
-
-code {
-  font-size: 1.2em;
-}
-
-ul {
-  padding-inline-start: 20px;
-}
-
-.Error {
-  color: red;
-}
+/* Content sources are now configured differently in v4 */

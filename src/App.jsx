@@ -1,11 +1,19 @@
-import "./App.css";
-import Form from "./components/Form";
+import { useState } from "react";
+
+import Page from "./components/Page";
+import { MovieContext, ThemeContext } from "./context";
 
 function App() {
+  const [cartData, setCartData] = useState([]);
+  const [darkMode, setDarkMode] = useState(true);
+
   return (
     <>
-      {/* <Pointer /> */}
-      <Form />
+      <ThemeContext.Provider value={{darkMode, setDarkMode}}>
+        <MovieContext.Provider value={{ cartData, setCartData }}>
+          <Page />
+        </MovieContext.Provider>
+      </ThemeContext.Provider>
     </>
   );
 }
