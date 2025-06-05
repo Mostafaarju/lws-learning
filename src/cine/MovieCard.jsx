@@ -6,25 +6,41 @@ import { getImgUrl } from "../utils/cine-utility";
 import MovieDetailsModal from "./MovieDetailsModal";
 import Rating from "./Rating";
 
+import { toast } from "react-toastify";
+
 export default function MovieCard({ movie }) {
   const [showModal, setShowModal] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState(null);
 
-  const { cartData, setCartData } = useContext(MovieContext);
+  const { state, dispatch } = useContext(MovieContext);
 
   function handleAddToCart(event, movie) {
     event.stopPropagation();
 
-    const found = cartData.find((item) => {
+    const found = state.cartData.find((item) => {
       return item.id === movie.id;
     });
 
     if (!found) {
-      setCartData([...cartData, movie]);
+      dispatch({
+        type: "ADD_TO_CART",
+        payload: {
+          ...movie,
+        },
+      });
+
+      toast.success(`Movie ${movie.title} Added successfully`, {
+        position: "bottom-right",
+      });
+      
     } else {
-      console.log(
-        `The Movie ${movie.title} has been added to the Cart already!`
-      );
+      // console.log(
+      //   `The Movie ${movie.title} has been added to the Cart already!`
+      // );
+
+      toast.error(`Movie ${movie.title} has been added to the cart already`, {
+        position: "bottom-right",
+      });
     }
   }
 
