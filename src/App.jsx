@@ -1,11 +1,14 @@
 import "./App.css";
-import Form from "./components/Form";
+import CatFriends from "./components/CatFriends";
 
 function App() {
   return (
     <>
-      
-      <Form />
+      {/* <Stopwatch />
+      <br />
+      <Form /> */}
+
+      <CatFriends />
     </>
   );
 }
