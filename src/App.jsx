@@ -1,5 +1,6 @@
 import "./App.css";
 import CatFriends from "./components/CatFriends";
+import FormHireorderComponent from "./components/FormHireorderComponent";
 
 function App() {
   return (
@@ -8,7 +9,8 @@ function App() {
       <br />
       <Form /> */}
 
-      <CatFriends />
+      {/* <CatFriends /> */}
+      <FormHireorderComponent />
     </>
   );
 }
