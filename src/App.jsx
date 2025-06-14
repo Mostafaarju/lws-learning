@@ -1,4 +1,6 @@
 import "./App.css";
+import ChatRoom from "./components/ChatRoom";
+import MyComponent from "./components/MyComponent";
 import TodoList from "./components/TodoList";
 
 function App() {
@@ -11,7 +13,9 @@ function App() {
       {/* <CatFriends /> */}
       {/* <FormHireorderComponent /> */}
       {/* <Counter /> */}
-      <TodoList />
+      {/* <TodoList /> */}
+      {/* <MyComponent /> */}
+      <ChatRoom />
     </>
   );
 }
