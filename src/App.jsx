@@ -1,22 +1,11 @@
 import "./App.css";
-import ChatRoom from "./components/ChatRoom";
-import MyComponent from "./components/MyComponent";
-import TodoList from "./components/TodoList";
+import Comments from "./components/Comments";
 
 function App() {
   return (
-    <>
-      {/* <Stopwatch />
-      <br />
-      <Form /> */}
-
-      {/* <CatFriends /> */}
-      {/* <FormHireorderComponent /> */}
-      {/* <Counter /> */}
-      {/* <TodoList /> */}
-      {/* <MyComponent /> */}
-      <ChatRoom />
-    </>
+    <div>
+      <Comments postId='1' />
+    </div>
   );
 }
 
