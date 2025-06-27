@@ -1,9 +1,16 @@
-import Timer from "./components/Timer";
+import Form from "./components/Form";
+import SaveButton from "./components/SaveButton";
+import StatusBar from "./components/StatusBar";
 
 export default function App() {
-    return (
-        <div>
-            <Timer />
-        </div>
-    );
+  return (
+    <div>
+      <StatusBar />
+      <SaveButton />
+
+      <hr />
+
+      <Form />
+    </div>
+  );
 }
