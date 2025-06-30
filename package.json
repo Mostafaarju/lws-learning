@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^0.0.0-experimental-fa3feba6-20250623",
-    "react-dom": "^0.0.0-experimental-fa3feba6-20250623"
+    "react": "^0.0.0-experimental-d92056ef-20250627",
+    "react-dom": "^0.0.0-experimental-d92056ef-20250627",
+    "react-toastify": "^11.0.5",
+    "toastify-js": "^1.12.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
