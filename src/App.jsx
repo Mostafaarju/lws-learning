@@ -1,20 +1,23 @@
 import { useState } from "react";
-import ChatRoom from "./components/ChatRoom";
+import "./App.css";
+import Hello from "./components/Hello";
+import Welcome from "./components/Welcome";
 
 export default function App() {
-  const [roomId, setRoomId] = useState("general");
+  const [show, setShow] = useState(false);
   return (
     <>
-      <label>
-        Choose the chat room:{" "}
-        <select value={roomId} onChange={(e) => setRoomId(e.target.value)}>
-          <option value="general">general</option>
-          <option value="travel">travel</option>
-          <option value="music">music</option>
-        </select>
-      </label>
+      <button onClick={() => setShow((s) => !s)}>
+        {show ? "Remove" : "Show"}
+      </button>
+
       <hr />
-      <ChatRoom roomId={roomId} />
+
+      {show && <Welcome />}
+
+      <hr />
+
+      {show && <Hello />}
     </>
   );
 }
